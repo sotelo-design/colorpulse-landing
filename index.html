@@ -1,107 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ColorPulse — Emotional Color Intelligence</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #ffffff;
-      color: #111;
-    }
-
-    header {
-      background-color: #f5f5f5;
-      padding: 20px;
-      border-bottom: 1px solid #ddd;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #7a5cff;
-    }
-
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #111;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      color: #7a5cff;
-    }
-
-    .hero {
-      background-color: #fdf8ff;
-      border-radius: 10px;
-      border: 1px solid #eee;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .hero button {
-      background-color: #7a5cff;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      border-top: 1px solid #eee;
-      padding: 20px;
-      color: #666;
-    }
-  </style>
+  <meta name="description" content="AI that analyzes photos and film frames to extract emotional color palettes and visualize color evolution over time." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <header>
-    <h1>ColorPulse</h1>
-    <nav>
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#signup">Join the Beta</a>
-    </nav>
+  <header class="site-header">
+    <div class="container row">
+      <a class="brand" href="#">
+        <img src="assets/logo.svg" alt="ColorPulse logo" width="28" height="28" />
+        <span>ColorPulse</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#signup" class="btn btn-ghost">Join the Beta</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Turn visuals into emotional color intelligence</h2>
-    <p>ColorPulse analyzes photos and film frames to extract mood-driven palettes and show how color evolves across time.</p>
-    <button>Join the Beta</button>
-  </section>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Turn visuals into emotional color intelligence</h1>
+          <p class="subhead">ColorPulse analyzes photos and film frames to extract mood-driven palettes and show how color evolves across time.</p>
+          <p><a class="btn btn-primary" href="#signup">Join the Beta</a></p>
+          <p class="small subtle">For designers, filmmakers, and visual artists.</p>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="card-title">Frame Analysis</div>
+          <div class="swatches">
+            <span style="--c:#6c53ff"></span>
+            <span style="--c:#9b5de5"></span>
+            <span style="--c:#ff6b6b"></span>
+            <span style="--c:#ff914d"></span>
+            <span style="--c:#ffc75f"></span>
+          </div>
+          <div class="bars">
+            <span style="--w:72%"></span>
+            <span style="--w:54%"></span>
+            <span style="--w:88%"></span>
+            <span style="--w:46%"></span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section id="how">
-    <h2>How it works</h2>
-    <p>1. Upload a photo or film stills.</p>
-    <p>2. Analyze to detect dominant hues, contrast, and emotional tone.</p>
-    <p>3. Export palettes directly to Adobe, Figma, or DaVinci Resolve.</p>
-  </section>
+    <!-- FEATURES (con elementos visuales) -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Product features</h2>
+        <div class="features-grid">
+          <article class="feature">
+            <div class="icon"></div>
+            <h3>Mood Extraction</h3>
+            <p>Instant palettes from any still. Get names, hex values, and usage suggestions.</p>
+          </article>
+          <article class="feature">
+            <div class="icon"></div>
+            <h3>Film Mode</h3>
+            <p>See color evolution across shots to understand rhythm and tone.</p>
+          </article>
+          <article class="feature">
+            <div class="icon"></div>
+            <h3>Dynamic Generator</h3>
+            <p>Create variations with contrast, saturation, and warmth controls.</p>
+          </article>
+          <article class="feature">
+            <div class="icon"></div>
+            <h3>Seamless Export</h3>
+            <p>One-click export to Adobe, Figma, and Resolve swatch formats.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <section id="features">
-    <h2>Features</h2>
-    <ul>
-      <li>Mood Extraction</li>
-      <li>Film Mode (color evolution)</li>
-      <li>Dynamic Generator</li>
-      <li>Seamless Export</li>
-    </ul>
-  </section>
+    <!-- EXAMPLES -->
+    <section id="examples" class="section section-alt">
+      <div class="container">
+        <h2>Palette examples</h2>
+        <div class="examples">
+          <div class="example">
+            <span class="sw" style="--c:#6c53ff"></span>
+            <span class="sw" style="--c:#9b5de5"></span>
+            <span class="sw" style="--c:#ff6b6b"></span>
+            <span class="sw" style="--c:#ff914d"></span>
+            <span class="sw" style="--c:#ffc75f"></span>
+            <p class="tiny subtle">“Twilight warmth” — high contrast, warm accent</p>
+          </div>
+          <div class="example">
+            <span class="sw" style="--c:#4a3aff"></span>
+            <span class="sw" style="--c:#7a6cff"></span>
+            <span class="sw" style="--c:#f07777"></span>
+            <span class="sw" style="--c:#ff8c42"></span>
+            <span class="sw" style="--c:#ffd166"></span>
+            <p class="tiny subtle">“Noir ember” — cool base, orange glow</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    © 2025 ColorPulse. All rights reserved.
+    <!-- SIGNUP (formulario placeholder funcional “sin backend”) -->
+    <section id="signup" class="section">
+      <div class="container narrow">
+        <h2>Join the beta</h2>
+        <p class="subtle center">Leave your email and we’ll notify you at launch.</p>
+        <form class="signup" method="post" action="#">
+          <label for="email" class="visually-hidden">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <button class="btn btn-primary" type="submit">Join</button>
+        </form>
+        <p class="tiny subtle center">Replace the action later with Formspree or your backend.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container row">
+      <p class="tiny subtle">© 2025 ColorPulse. All rights reserved.</p>
+      <ul class="footer-nav">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#signup">Contact</a></li>
+      </ul>
+    </div>
   </footer>
-
 </body>
 </html>
