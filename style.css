@@ -88,4 +88,26 @@ h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
   align-items: center;
   gap: 2rem;
 }
+/* Hero gradient diagonal y constante */
+.hero {
+  background: linear-gradient(
+      135deg,
+      rgba(122, 92, 255, 0.35) 0%,
+      rgba(255, 140, 66, 0.25) 50%,
+      rgba(10, 10, 15, 0.95) 100%
+  );
+  background-size: 200% 200%;
+  background-position: center;
+}
+/* Hero gradient diagonal y constante (override) */
+.hero{
+  background: linear-gradient(
+    135deg,
+    rgba(90, 80, 255, 0.35) 0%,
+  rgba(35, 10, 100, 0.4) 50%,
+  rgba(5, 5, 15, 0.95) 100%
+  ) !important;
+  background-size: 200% 200%;
+  background-position: center;
+}
 
