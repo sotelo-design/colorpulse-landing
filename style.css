@@ -75,4 +75,17 @@ h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
   .examples{grid-template-columns:1fr}
   .nav-list{gap:.4rem}
 }
+/* --- Alineación exacta del header --- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px; /* altura uniforme */
+  padding: 0 2rem;
+}
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
 
