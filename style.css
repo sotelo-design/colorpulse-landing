@@ -31,6 +31,8 @@ body{margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Arial, sans-ser
 /* Hero */
 .hero{padding:4rem 0 2.5rem; background: radial-gradient(900px 600px at 10% -10%, #7a5cff2a, transparent), radial-gradient(800px 500px at 120% 0%, #ff8c4225, transparent);}
 .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:center}
+/* 🔧 solo este ajuste para alinear arriba la tarjeta con el título */
+.hero-grid{align-items:start;}
 .hero h1{font-size:clamp(2rem,3.2vw,3rem); margin:0 0 .6rem}
 .subhead{color:var(--muted)}
 
@@ -47,12 +49,12 @@ body{margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Arial, sans-ser
 .section-alt{background: #ffffff05}
 h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
 
-/* Features */
+/* Features (layout original) */
 .features-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem}
 .feature{background:var(--card); border:1px solid #ffffff12; border-radius:var(--radius); padding:1.1rem}
 .feature .icon{width:28px; height:28px; border-radius:6px; background:linear-gradient(135deg, var(--violet), var(--orange)); margin-bottom:.6rem}
 
-/* Examples */
+/* Examples (layout original) */
 .examples{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
 .example{background:var(--card); border:1px solid #ffffff12; border-radius:var(--radius); padding:1rem}
 .example .sw{display:inline-block; width:42px; height:28px; border-radius:6px; margin-right:.35rem; background:var(--c)}
@@ -72,44 +74,5 @@ h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
   .features-grid{grid-template-columns:repeat(2,1fr)}
   .examples{grid-template-columns:1fr}
   .nav-list{gap:.4rem}
-}/* --- Alignment polish for header + hero + cards --- */
-
-/* Header más compacto y centrado vertical */
-.site-header .container { padding-block: 14px; }
-.site-header .row { align-items: center; }
-.brand { gap: .5rem; }
-.nav-list { align-items: center; }
-.nav-list a { line-height: 1; padding: .5rem .8rem; }
-
-/* Hero: columnas alineadas arriba, espaciado consistente */
-.hero { padding-top: 72px; padding-bottom: 48px; }
-.hero-grid {
-  grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
-  align-items: start;   /* <— hace que la tarjeta quede alineada con el título */
-  gap: 32px;
-}
-.hero h1 { margin-bottom: 12px; }
-.subhead { margin-bottom: 16px; }
-.hero .btn-primary { margin-right: 8px; }
-
-/* Tarjeta más “ajustada” visualmente */
-.hero-card { margin-top: 6px; padding: 16px 18px; }
-.card-title { margin: 0 0 10px; }
-
-/* Secciones y cards con grid limpio */
-.section { padding: 56px 0; }
-.features-grid .feature {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 12px;
-  align-items: start;
-}
-.feature .icon { margin: 0; }
-
-/* Ejemplos: texto pegado a los swatches sin saltos raros */
-.examples .example {
-  display: grid;
-  grid-template-rows: auto auto;
-  gap: 8px;
 }
 
