@@ -88,28 +88,3 @@ h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
   align-items: center;
   gap: 2rem;
 }
-/* === Fondo global Noir Violet (en toda la página) === */
-html, body { min-height: 100%; }
-
-html {
-  /* degradé violeta oscuro, sin naranjo */
-  background: linear-gradient(
-    135deg,
-    rgba(90, 80, 255, 0.32) 0%,
-    rgba(50, 35, 120, 0.36) 50%,
-    rgba(5, 5, 15, 0.96) 100%
-  ) !important;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/* El hero y las secciones NO deben pintar otro fondo encima */
-.hero,
-.section,
-.section-alt,
-main,
-.content,
-body { 
-  background: transparent !important;
-}
