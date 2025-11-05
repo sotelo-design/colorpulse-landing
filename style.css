@@ -454,4 +454,27 @@ h2{
 @media (max-width: 900px){
   .hero-image img { max-width: 420px; max-height: 260px; }
 }
+/* --- FIX FINAL PARA QUITAR LOS BORDES BLANCOS EN EL HERO IMAGE --- */
+.hero-image {
+  position: relative;
+  display: inline-block;
+  border-radius: 16px;
+  background-color: #000; /* mismo tono oscuro que el fondo */
+  overflow: hidden; /* recorta cualquier píxel suelto */
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* elimina doble redondeado */
+  background-color: #000; /* igual tono oscuro dentro */
+}
+
+/* Asegura que el texto debajo (MYSTERIOUS / etc) no tenga separación visual */
+.hero-image .palette-bar,
+.hero-image figcaption,
+.hero-image p {
+  background-color: #000 !important;
+}
 
