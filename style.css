@@ -445,4 +445,26 @@ h2{
 @media (max-width: 900px){
   .hero-grid { grid-template-columns: 1fr; }
 }
+.hero-image {
+  display: flex;
+  justify-content: center;
+  border-radius: 16px;
+  background: transparent;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 560px;
+  max-height: 320px;
+  object-fit: contain; /* mantiene proporción, no recorta */
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+}
+
+/* versión más chica para móvil */
+@media (max-width: 900px){
+  .hero-image img { max-width: 420px; max-height: 260px; }
+}
 
