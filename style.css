@@ -395,11 +395,6 @@ h2{
   height: 44px;
 }
 
-/* Quitar filtros por defecto */
-.features-grid .icon img{
-  filter: none;
-}
-
 /* Solo aplicar el “blanqueo” a los íconos que vienen del CDN (Lucide) */
 .features-grid .icon img[src*="lucide-static"]{
   filter: brightness(0) invert(1);
@@ -411,35 +406,27 @@ h2{
   fill: none !important;
   opacity: 1;
 }
-/* HERO IMAGE: simple y sin efecto hover */
-.hero-grid {
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
-  gap: 2rem;
+//* === HERO IMAGE — final sin recortes === */
+.hero-image{
+  display:flex;
+  justify-content:center;
+  border-radius:16px;
+  background:transparent;
+  overflow:visible;          /* no recorta */
 }
-
-.hero-image {
-  display: flex;
-  justify-content: center;
-  border-radius: 16px;
-  overflow: hidden; /* recorta esquinas */
-  background-color: #0a0a0f; /* 👈 fondo oscuro sólido */
-  outline: none;
+.hero-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:560px;
+  max-height:320px;
+  object-fit:contain;        /* mantiene proporción, no recorta */
+  border-radius:16px;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
 }
-
-.hero-image img {
-  display: block;
-  width: 100%;
-  max-width: clamp(280px, 40vw, 520px);
-  max-height: clamp(200px, 48vh, 380px);
-  height: auto;
-  object-fit: cover;
-  border: none;
-  border-radius: inherit;
-  background-color: #0a0a0f; /* 👈 fondo dentro del propio <img> también */
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+@media (max-width:900px){
+  .hero-image img{ max-width:420px; max-height:260px; }
 }
-
 
 /* Mobile */
 @media (max-width: 900px){
