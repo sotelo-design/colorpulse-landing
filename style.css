@@ -466,3 +466,62 @@ h2{
   .hero-grid{ flex-direction: column; align-items: center; }
   .hero-image{ width: 420px; }
 }
+/* ===== HERO: sin fondo negro y sin bordes blancos, en una sola pieza ===== */
+
+/* 0) Quitar el marco y el padding que generan el filo claro */
+.hero-card{
+  background: transparent !important;
+  border: 0 !important;          /* ← elimina el borde blanco */
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 1) Un solo contenedor que recorta todo (imagen + tiras) */
+.hero-image{
+  position: relative;
+  display: block;
+  max-width: 520px;
+  border-radius: 16px;            /* radio único */
+  overflow: hidden;               /* recorte real de esquinas */
+  background: transparent !important;
+  box-shadow: 0 18px 60px rgba(0,0,0,.35); /* sombra bonita sin halo blanco */
+  margin-left: auto;              /* alinea a la derecha dentro del grid */
+}
+
+/* 2) La foto NO tiene radios propios ni fondo */
+.hero-image img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;               /* evita doble redondeo */
+  background: transparent !important;
+  box-shadow: none;               /* la sombra está en el contenedor, no aquí */
+}
+
+/* 3) La franja con el texto (MYSTERIOUS | …) ocupa todo el ancho */
+.hero-image .mood-strip{
+  background: #e6e6ee;            /* el mismo claro que tienes en el diseño */
+  padding: 10px 14px;
+  border-radius: 0;               /* el redondeo lo hace el contenedor */
+}
+
+/* 4) La barra de swatches de color, sin radios propios */
+.hero-image .swatches-strip{ 
+  display: grid; 
+  grid-template-columns: repeat(5, 1fr);
+  height: 28px;
+  border-radius: 0;
+}
+.hero-image .swatches-strip > span{ border-radius: 0; }
+
+/* 5) Layout estable del hero (sin “bailes”) */
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.2fr 520px;   /* texto flexible + tarjeta fija */
+  gap: 2rem;
+  align-items: center;
+}
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-image{ max-width: 420px; margin: 0 auto; }
+}
