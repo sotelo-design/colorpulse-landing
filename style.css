@@ -406,52 +406,63 @@ h2{
   fill: none !important;
   opacity: 1;
 }
-//* === HERO IMAGE — final sin recortes === */
+/* ===== HERO VISUAL: sin fondo negro y sin bordes blancos ===== */
+
+/* 1) El “wrapper” NO pinta fondo ni borde */
+.hero .hero-card{
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 2) Contenedor que recorta TODO con el mismo radio */
 .hero-image{
-  display:flex;
-  justify-content:center;
-  border-radius:16px;
-  background:transparent;
-  overflow:visible;          /* no recorta */
-}
-.hero-image img{
-  display:block;
-  width:100%;
-  height:auto;
-  max-width:560px;
-  max-height:320px;
-  object-fit:contain;        /* mantiene proporción, no recorta */
-  border-radius:16px;
-  box-shadow:0 12px 40px rgba(0,0,0,.35);
-}
-@media (max-width:900px){
-  .hero-image img{ max-width:420px; max-height:260px; }
-}
-
-/* Mobile */
-@media (max-width: 900px){
-  .hero-grid { grid-template-columns: 1fr; }
-}
-.hero-image {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  width: 520px;         /* ajusta si la quieres más chica/grande */
+  max-width: 100%;
   border-radius: 16px;
-  background: transparent;
+  overflow: hidden;     /* recorte real de esquinas */
+  background: transparent !important;
 }
 
-.hero-image img {
+/* 3) La foto: sin radios propios ni fondos extra */
+.hero-image img{
   display: block;
   width: 100%;
   height: auto;
-  max-width: 560px;
-  max-height: 320px;
-  object-fit: contain; /* mantiene proporción, no recorta */
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  border: 0;
+  border-radius: 0;                   /* evita doble redondeo */
+  background: transparent !important; /* nada de fondo negro */
 }
 
-/* versión más chica para móvil */
+/* 4) La franja con los textos (MYSTERIOUS/ISOLATED/…) */
+.hero-image .mood-strip{
+  border-radius: 0 0 16px 16px; /* esquinas inferiores redondas */
+  overflow: hidden;             /* no se asomen esquinas */
+}
+
+/* 5) La barra de swatches de color bajo el texto */
+.hero-image .swatches-strip{
+  border-radius: 0 0 16px 16px; /* por si es el último bloque */
+  overflow: hidden;
+}
+
+/* 6) Anti-halo: hace que los bordes se vean limpios sobre el degradado */
+.hero-image{
+  background-clip: padding-box;
+  -webkit-mask-image: radial-gradient(#000 99%, transparent 100%); /* suaviza el antialias */
+}
+
+/* 7) Layout estable: no más “bailes” al redimensionar */
+.hero-grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 @media (max-width: 900px){
-  .hero-image img { max-width: 420px; max-height: 260px; }
+  .hero-grid{ flex-direction: column; align-items: center; }
+  .hero-image{ width: 420px; }
 }
-
