@@ -445,8 +445,4 @@ h2{
 @media (max-width: 900px){
   .hero-grid { grid-template-columns: 1fr; }
 }
-/* Kill the white halo on hero.jpg by clipping further inside */
-.hero-image img{
-  clip-path: inset(0 round 22px); /* prueba 22–28px si aún se ve algo */
-  background:#0a0a0f;
-}
+
