@@ -122,11 +122,6 @@ h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
   transition: transform .2s ease, opacity .2s ease, filter .2s ease;
 }
 
-.feature:hover .icon img{
-  transform: translateY(-1px);
-  opacity:1;
-  filter: invert(1) brightness(1.6) contrast(1.15);
-}
 
 .features-grid .feature h3{
   margin:4px 0 8px 0;
@@ -134,6 +129,51 @@ h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
 .features-grid .feature p{
   margin:0;
 }
+/* Interacción sutil para las cards de features */
+.feature{
+  position: relative;
+  transition: transform .18s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+  will-change: transform;
+}
+
+.feature .icon img{
+  transition: transform .18s ease, filter .18s ease, opacity .18s ease;
+  transform-origin: center;
+}
+
+/* Solo en dispositivos con hover real (evita parpadeo en móviles) */
+@media (hover:hover){
+  .feature:hover{
+    transform: translateY(-3px);
+    border-color: #7a5cff40; /* violeta suave */
+    box-shadow: 0 10px 24px rgba(122,92,255,.14),
+                0 2px 10px rgba(0,0,0,.25);
+  }
+  .feature:hover .icon img{
+    transform: scale(1.08);  /* +8% */
+    filter: drop-shadow(0 6px 16px rgba(122,92,255,.25));
+    opacity: 1;
+  }
+}
+
+/* Accesible con teclado: mismo efecto al enfocar */
+.feature:focus-within{
+  transform: translateY(-3px);
+  border-color: #7a5cff66;
+  box-shadow: 0 0 0 2px #7a5cff33 inset,
+              0 10px 24px rgba(122,92,255,.14),
+              0 2px 10px rgba(0,0,0,.25);
+}
+.feature:focus-within .icon img{
+  transform: scale(1.08);
+  filter: drop-shadow(0 6px 16px rgba(122,92,255,.25));
+}
+
+/* Respeta reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .feature, .feature .icon img{ transition: none; }
+}
+
 /* --- ICONOS EN FEATURES --- */
 /* Tamaño y alineación consistentes */
 .features-grid .icon svg,
