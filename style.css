@@ -454,18 +454,6 @@ h2{
   -webkit-mask-image: radial-gradient(#000 99%, transparent 100%); /* suaviza el antialias */
 }
 
-/* 7) Layout estable: no más “bailes” al redimensionar */
-.hero-grid{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-@media (max-width: 900px){
-  .hero-grid{ flex-direction: column; align-items: center; }
-  .hero-image{ width: 420px; }
-}
 /* === FIX FINAL: borrar esquinas blancas del JPG sin fondo negro === */
 
 /* 1) Contenedor: mismo tamaño, sin fondo ni borde */
@@ -496,5 +484,44 @@ h2{
   }
   .hero-image img {
     clip-path: inset(0 round 20px);
+  }
+/* === HERO FINAL CORRECTO: imagen a la derecha del título, sin recortes === */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 520px;  /* texto izquierda, imagen derecha */
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Contenedor de la imagen */
+.hero-image {
+  justify-self: end;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+}
+
+/* Imagen limpia, sin fondo ni recorte */
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  object-fit: contain; /* mantiene proporción sin cortar */
+}
+
+/* En móvil, la imagen baja y se centra */
+@media (max-width: 900px){
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-image {
+    justify-self: center;
+    max-width: 420px;
   }
 }
