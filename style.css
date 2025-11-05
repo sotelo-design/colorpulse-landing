@@ -47,7 +47,13 @@ body{margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Arial, sans-ser
 /* Sections */
 .section{padding:3rem 0}
 .section-alt{background: #ffffff05}
-h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
+h2{
+  font-size:1.8rem;
+  margin:0 0 1.5rem;
+  color:#cdbbff;
+  text-align:center; /* 👈 centra el título */
+}
+
 
 /* Features (layout original) */
 .features-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem}
