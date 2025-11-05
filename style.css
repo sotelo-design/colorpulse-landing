@@ -447,6 +447,6 @@ h2{
 }
 /* Kill the white halo on hero.jpg by clipping further inside */
 .hero-image img{
-  clip-path: inset(0 round 27px); /* prueba 22–28px si aún se ve algo */
+  clip-path: inset(0 round 22px); /* prueba 22–28px si aún se ve algo */
   background:#0a0a0f;
 }
