@@ -134,3 +134,27 @@ h2{font-size:1.8rem; margin:0 0 1rem; color:#cdbbff}
 .features-grid .feature p{
   margin:0;
 }
+/* --- ICONOS EN FEATURES --- */
+/* Tamaño y alineación consistentes */
+.features-grid .icon svg,
+.features-grid .icon img{
+  width: 44px;
+  height: 44px;
+}
+
+/* Quitar filtros por defecto */
+.features-grid .icon img{
+  filter: none;
+}
+
+/* Solo aplicar el “blanqueo” a los íconos que vienen del CDN (Lucide) */
+.features-grid .icon img[src*="lucide-static"]{
+  filter: brightness(0) invert(1);
+}
+/* Forzar color blanco en el ícono local export.svg */
+.features-grid .icon img[src*="assets/icons/export.svg"] {
+  filter: brightness(100%) invert(0);
+  stroke: white !important;
+  fill: none !important;
+  opacity: 1;
+}
